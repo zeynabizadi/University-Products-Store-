@@ -1,0 +1,289 @@
+/* #############################################################################################
+  ################################## START BASE STYLE #########################################
+  #############################################################################################    */
+    .a{
+      text-decoration: none;
+      
+    }
+    .body{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    text-decoration: rtl;
+    }
+   .container{
+    text-align: center ;
+    }
+    h2 , h3 , h4 , h5 , h6{
+      color: grey;
+    }
+    .selector-for-some-widget {
+      box-sizing: content-box;
+    }
+ /* #############################################################################################
+    ################################## START NAVBAR STYLE #######################################
+    #############################################################################################    */
+   .navbar{
+    
+    position: fixed;
+    top: 0;
+    width: 100%;
+   }
+  /*  #############################################################################################
+    ################################## START MENU STYLE #########################################
+    #############################################################################################    */
+ .menu{
+   background-color: #1F3541;
+   justify-content: center;
+   width: 60%;
+   margin-left: 20%;
+   margin-right: 20%;
+   padding-top:20px;
+   font-size:100%;
+   border: 2px solid rgb(37, 11, 99);
+   border-radius: 20px;
+   box-shadow: 0 3px 3px 0 rgb(221, 218, 224) ; 
+ }
+ .nav-link a:hover,
+  .nav-link a:focus 
+  {
+    color: rgb(71, 129, 196);
+  }
+ .nav-link{
+   list-style: none;
+   color:rgb(164, 161, 167);
+ }
+
+.nav-item{
+  margin:1%;
+  padding-top: 0.5%;
+  font-size: 100%;
+  
+}
+
+ /* ###########################################################################################
+  ################################## CUSTOMIZE THE CAROUSEL ###################################
+  #############################################################################################    */
+
+/* Carousel base class */
+.carousel {
+    margin-bottom: 4rem;
+  }
+  /* Since positioning the image, we need to help out the caption */
+  .carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+  }
+  
+  /* Declare heights because of positioning of img element */
+  .carousel-item {
+    height: 32rem;
+  }
+  .carousel-item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 32rem;
+  }
+  /* #############################################################################################
+    ################################## START container marketing STYLE ###########################
+    #############################################################################################    */
+ .marketing{
+  text-align: center;
+  }
+ 
+  /* #############################################################################################
+    ################################## START FORM STYLE #########################################
+    #############################################################################################    */
+
+.mb-3{
+  margin: auto;
+}
+/*  ############################################################################################
+    ################################## START SECTION&SIDEBAR STYLE #############################
+    ############################################################################################   */
+    div.section , div.sidebar{
+      float: left;
+    }
+    .section{
+      width: 70%;
+    }
+    .sidebar{
+      width: 30%;
+    }
+/*  #############################################################################################
+    ##################################   START SECTION  #########################################
+    #############################################################################################    */
+  .card{
+   box-shadow: 0 4px 8px 0 rgb(168, 164, 164);
+   margin: 7px;
+  }
+  .row{
+    text-align: center;
+  }
+  .btncard{
+    font-size: small;
+    color: white;
+    background-color: #1F3541;
+  }
+  .navsection{
+  
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    
+  }
+  /* ###########################################################################################
+    ##################################   START SIDEBAR  #########################################
+    #############################################################################################    */
+  .sidebar{
+    text-align: center;
+   
+  }
+  .show{
+    
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-left:10px;
+  }
+  .box{
+    text-align: right;
+    margin: 0 5px 0 30px;
+    
+  }
+  tn-toggle {
+    display: inline-flex;
+    align-items: right;
+    padding: .25rem .5rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, .65);
+    background-color: transparent;
+    border: 0;
+  }
+  .btn-toggle:hover,
+  .btn-toggle:focus {
+    color: rgba(0, 0, 0, .85);
+  }
+  
+  .btn-toggle::before {
+    width: 1.25em;
+    line-height: 0;
+    content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+    transition: transform .35s ease;
+    transform-origin: .5em 50%;
+  }
+  
+  .btn-toggle[aria-expanded="true"] {
+    color: rgba(0, 0, 0, .85);
+    
+  }
+  .btn-toggle[aria-expanded="true"]::before {
+    transform: rotate(90deg);
+  }
+  
+  .btn-toggle-nav a {
+    display: inline-flex;
+    padding: .1875rem .5rem;
+    margin-top: .125rem;
+    margin-left: 1.25rem;
+    text-decoration: none;
+  }
+  .btn-toggle-nav a:hover,
+  .btn-toggle-nav a:focus {
+    background-color:rgb(241, 238, 243);
+  }
+  /* #############################################################################################
+    ################################## START FOOTER STYLE #########################################
+    #############################################################################################    */
+  footer{
+     background-color: rgb(241, 238, 243);
+  }
+
+   /* #############################################################################################
+    ################################## START ICON STYLE #########################################
+    #############################################################################################    */
+
+  ul.share-buttons{
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul.share-buttons li{
+    display: inline;
+  }
+  
+  ul.share-buttons .sr-only{
+    position: absolute;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+  }
+ /* #############################################################################################
+    ################################## START FONT STYLE ##########################################
+    ##############################################################################################  */
+
+    @font-face {
+      font-family: Vazir;
+      src: url('Vazir.eot');
+      src: url('Vazir.eot?#iefix') format('embedded-opentype'),
+           url('Vazir.woff2') format('woff2'),
+           url('Vazir.woff') format('woff'),
+           url('Vazir.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+  }
+  @font-face {
+      font-family: Vazir;
+      src: url('Vazir-Bold.eot');
+      src: url('Vazir-Bold.eot?#iefix') format('embedded-opentype'),
+           url('Vazir-Bold.woff2') format('woff2'),
+           url('Vazir-Bold.woff') format('woff'),
+           url('Vazir-Bold.ttf') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+  }
+  @font-face {
+      font-family: Vazir;
+      src: url('Vazir-Black.eot');
+      src: url('Vazir-Black.eot?#iefix') format('embedded-opentype'),
+           url('Vazir-Black.woff2') format('woff2'),
+           url('Vazir-Black.woff') format('woff'),
+           url('Vazir-Black.ttf') format('truetype');
+      font-weight: 900;
+      font-style: normal;
+  }
+  @font-face {
+      font-family: Vazir;
+      src: url('Vazir-Medium.eot');
+      src: url('Vazir-Medium.eot?#iefix') format('embedded-opentype'),
+           url('Vazir-Medium.woff2') format('woff2'),
+           url('Vazir-Medium.woff') format('woff'),
+           url('Vazir-Medium.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+  }
+  @font-face {
+      font-family: Vazir;
+      src: url('Vazir-Light.eot');
+      src: url('Vazir-Light.eot?#iefix') format('embedded-opentype'),
+           url('Vazir-Light.woff2') format('woff2'),
+           url('Vazir-Light.woff') format('woff'),
+           url('Vazir-Light.ttf') format('truetype');
+      font-weight: 300;
+      font-style: normal;
+  }
+  @font-face {
+      font-family: Vazir;
+      src: url('Vazir-Thin.eot');
+      src: url('Vazir-Thin.eot?#iefix') format('embedded-opentype'),
+           url('Vazir-Thin.woff2') format('woff2'),
+           url('Vazir-Thin.woff') format('woff'),
+           url('Vazir-Thin.ttf') format('truetype');
+      font-weight: 100;
+      font-style: normal;
+  }
+  
+    
