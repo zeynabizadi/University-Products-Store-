@@ -1,3 +1,9 @@
+<?php
+
+include('resources/config/config.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="fa-IR">
 <head>
