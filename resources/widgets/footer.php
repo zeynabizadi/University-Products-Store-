@@ -1,4 +1,4 @@
-<?php include('../config/config.php'); ?>
+<?php echo null; ?>
 
 <footer>
     <div class="container-fluid">
@@ -45,9 +45,9 @@
               <h5>فهرست عناوین</h5>
               <br>
               <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="pages/back.php" class="nav-link p-0 text-muted">بازگشت کالا</a></li>
-                <li class="nav-item mb-2"><a href="pages/warranty.php" class="nav-link p-0 text-muted"> ضمانت کالا</a></li>
-                <li class="nav-item mb-2"><a href="pages/delivery.php" class="nav-link p-0 text-muted">نحوه تحویل کالا</a></li>
+                <li class="nav-item mb-2"><a href="<?php echo $path; ?>/pages/back.php" class="nav-link p-0 text-muted">بازگشت کالا</a></li>
+                <li class="nav-item mb-2"><a href="<?php echo $path; ?>/pages/warranty.php" class="nav-link p-0 text-muted"> ضمانت کالا</a></li>
+                <li class="nav-item mb-2"><a href="<?php echo $path; ?>/pages/delivery.php" class="nav-link p-0 text-muted">نحوه تحویل کالا</a></li>
               </ul>
             </div>
           </div>
@@ -56,9 +56,9 @@
               <h5>خدمات مشتریان</h5>
               <br>
               <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="pages/qustions.php" class="nav-link p-0 text-muted">سئوالات متداول</a></li>
-                <li class="nav-item mb-2"><a href="pages/protest.php" class="nav-link p-0 text-muted">ثبت شکایت</a></li>
-                <li class="nav-item mb-2"><a href="pages/guide.php" class="nav-link p-0 text-muted">راهنمای خرید</a></li>
+                <li class="nav-item mb-2"><a href="<?php echo $path; ?>/pages/qustions.php" class="nav-link p-0 text-muted">سئوالات متداول</a></li>
+                <li class="nav-item mb-2"><a href="<?php echo $path; ?>/pages/protest.php" class="nav-link p-0 text-muted">ثبت شکایت</a></li>
+                <li class="nav-item mb-2"><a href="<?php echo $path; ?>/pages/guide.php" class="nav-link p-0 text-muted">راهنمای خرید</a></li>
               </ul>
             </div>
           </div>
