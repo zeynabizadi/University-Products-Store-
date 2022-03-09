@@ -1,73 +1,15 @@
 <!DOCTYPE html>
 <html lang="fa-IR">
- <head>
-     <!-- Required meta tags -->
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <!--Bootstrap Css-->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-     <!--Style Css-->
-     <link rel="stylesheet" href="resources/Css/style.css">
-     <title>فنی مهندسی</title>
- </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../resources/css/mdb.min.css" rel="stylesheet" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="../resources/css/style.css">
+  <script src="https://kit.fontawesome.com/4a679d8ec0.js" crossorigin="anonymous"></script>
+  <title>بازگشت کالا</title>
+</head>
  <body>
-      <!----------------------------------------------------------------------------------
-       -----------------------------------------------------------------------------------
-       -----------------------------        START NAVBAR      -----------------------------
-       ------------------------------------------------------------------------------------
-       ------------------------------------------------------------------------------------>
-       <header>
-        <nav class="navbar navbar-light bg-light fixed-top">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#"> <img src="resources/image/icon.png" width="50px" height="50px" alt="icon"> فروشگاه محصولات دانشگاهی</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">فروشگاه محصولات دانشگاهی</h5>
-                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="index.html">خانه</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="Engineering.php" id="offcanvasNavbarDropdown" role="button" aria-expanded="false">
-                      فنی مهندسی
-                      </a>
-                    </li>
-                      <li class="nav-item">
-                        <a class="nav-link " href="Humanities.php" id="offcanvasNavbarDropdown" role="button" aria-expanded="false">
-                        علوم انسانی
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="Science.html" id="offcanvasNavbarDropdown" role="button" aria-expanded="false">
-                        علوم پایه
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="Medical Sciences.php" id="offcanvasNavbarDropdown" role="button"  aria-expanded="false">
-                        علوم پزشکی
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="art.php" id="offcanvasNavbarDropdown" role="button"  aria-expanded="false">
-                        هنر
-                        </a>
-                      </li>
-                  </ul>
-                  <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="دنبال چی میگردی" aria-label="Search">
-                    <button class="btn btn-outline-dark" type="submit">جستجو</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </nav>  
-    </header>
+ <?php include('../resources/widgets/navbar.php'); ?>
       <!----------------------------------------------------------------------------------
        -----------------------------------------------------------------------------------
        -----------------------------        START MENU       -----------------------------
