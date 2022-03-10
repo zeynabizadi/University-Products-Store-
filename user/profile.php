@@ -1,6 +1,7 @@
 <?php
 
   include('../resources/config/config.php');
+  include('../resources/routes/routes.php');
 
 ?>
 
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="../resources/css/style.css">
   <link rel="stylesheet" href="../resources/css/styleuser.css">
   <script src="https://kit.fontawesome.com/4a679d8ec0.js" crossorigin="anonymous"></script>
-  <title>پنل کاربری</title>
+  <title>پروفایل</title>
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -36,10 +37,7 @@
     <?php include('../resources/widgets/sidebar.php'); ?>
     <div class="b-example-divider"></div>
     <div class="container" style="padding-top: 5%;">
-      <p class="h2">sghl</p>
-      <p class="h2">sfh</p>
-      <p class="h2">drtrt</p>
-      <p class="h2" xlink:href="#grid">sdfgg</p>
+      <p>پروفایل</p>
     </div>
   </main>
 
