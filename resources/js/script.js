@@ -7,3 +7,9 @@
     })
   })()
  
+
+$(document).ready(function () {
+    $('#open-menu').click(function () {
+    $('#nav-menu').modal('show');
+  });
+});
