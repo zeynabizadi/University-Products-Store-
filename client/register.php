@@ -8,7 +8,7 @@
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
      <!--Style Css-->
-     <link rel="stylesheet" href="resources/Css/style.css">
+     <link rel="stylesheet" href="../resources/css/style.css">
      <title>ورود به حساب کاربری</title>
  </head>
  <body>
@@ -20,7 +20,7 @@
        <header>
         <nav class="navbar navbar-light bg-light fixed-top">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#"> <img src="resources/image/icon.png" width="50px" height="50px" alt="icon"> فروشگاه محصولات دانشگاهی</a>
+              <a class="navbar-brand" href="#"> <img src="../resources/images/new/icon.png" width="50px" height="50px" alt="icon"> فروشگاه محصولات دانشگاهی</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
               </button>
