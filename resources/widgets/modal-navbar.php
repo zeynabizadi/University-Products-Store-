@@ -13,25 +13,25 @@
                       <a class="nav-link active" aria-current="page" href="<?php echo $path; ?>">خانه</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="<?php echo $path; ?>/pages/Engineering.php"  role="button"  aria-expanded="false">فنی مهندسی</a>
+                      <a class="nav-link" href="<?php echo $path; ?>/shop/shop.php?category=فنی"  role="button"  aria-expanded="false">فنی مهندسی</a>
                     </li>
                       <li class="nav-item">
-                        <a class="nav-link " href="<?php echo $path; ?>/pages/Humanities.php"  role="button"  aria-expanded="false">
+                        <a class="nav-link " href="<?php echo $path; ?>/shop/shop.php?category=علوم-انسانی"  role="button"  aria-expanded="false">
                         علوم انسانی
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $path; ?>/pages/Science.php"  role="button"  aria-expanded="false">
+                        <a class="nav-link" href="<?php echo $path; ?>/shop/shop.php?category=علوم-پایه"  role="button"  aria-expanded="false">
                         علوم پایه
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $path; ?>/pages/Medical Sciences.php"  role="button" aria-expanded="false">
+                        <a class="nav-link" href="<?php echo $path; ?>/shop/shop.php?category=علوم-پزشکی"  role="button" aria-expanded="false">
                         علوم پزشکی
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $path; ?>/pages/art.php"  role="button"  aria-expanded="false">
+                        <a class="nav-link" href="<?php echo $path; ?>/shop/shop.php?category=هنر"  role="button"  aria-expanded="false">
                         هنر
                         </a>
                       </li>
