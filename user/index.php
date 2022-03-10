@@ -1,7 +1,11 @@
 <?php
 
+  session_start();
+
   include('../resources/config/config.php');
   include('../resources/routes/routes.php');
+
+  if (empty($_SESSION['loggedin'])) header('location:' . $path . '/client');
 
 ?>
 
