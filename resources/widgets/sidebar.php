@@ -36,12 +36,12 @@
     </ul>
     <hr>
     <div class="dropup">
-        <span id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false" >
+        <span id="dropdownMenuButton" class="pointer" data-mdb-toggle="dropdown" aria-expanded="false" >
             بیشتر
         </span>
         <ul class="dropdown-menu border" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="#">پروفایل</a></li>
-            <li><a class="dropdown-item" href="#">خروج از حساب</a></li>
+            <li><a class="dropdown-item" href="<?php echo $path; ?>/user/profile.php">پروفایل</a></li>
+            <li><a class="dropdown-item" href="?logout=true">خروج از حساب</a></li>
         </ul>
     </div>
 </div>
