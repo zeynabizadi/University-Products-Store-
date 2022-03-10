@@ -19,7 +19,13 @@ include('resources/config/config.php');
   <div class="main">
 
   </div>
+
+  <?php include('resources/widgets/modal-navbar.php'); ?>
+
   <?php include('resources/widgets/footer.php'); ?>
+  <script src="resources/js/jquery-3.6.0.min.js"></script>
+  <script src="resources/js/script.js"></script>
   <script src="resources/js/mdb.min.js"></script>
+
 </body>
 </html>
