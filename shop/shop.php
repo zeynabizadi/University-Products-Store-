@@ -14,7 +14,7 @@ $category = $_GET['category'];
   <link href="../resources/css/mdb.min.css" rel="stylesheet" type="text/css" rel="stylesheet">
   <link rel="stylesheet" href="../resources/css/style.css">
   <script src="https://kit.fontawesome.com/4a679d8ec0.js" crossorigin="anonymous"></script>
-  <title>بازگشت کالا</title>
+  <title>فروشگاه</title>
 </head>
  <body>
  <?php include('../resources/widgets/navbar.php'); ?>
@@ -63,7 +63,8 @@ $category = $_GET['category'];
         <br>
         <div class="row">
             <?php
-                if (mysqli_num_rows($get_books = mysqli_query($connection, "SELECT * FROM books WHERE category = '$category'")) != 0) {
+                if (isset($category)) {
+                  if (mysqli_num_rows($get_books = mysqli_query($connection, "SELECT * FROM books WHERE category = '$category'")) != 0) {
                     while ($book = mysqli_fetch_assoc($get_books)) {
                         ?>
                         <div class="col-md-3">
@@ -81,7 +82,28 @@ $category = $_GET['category'];
                         </div>
                         <?php
                     }
-                } else echo '<h4>کتابی در این دسته بندی یافت نشد.</h4>';
+                  } else echo '<h4>کتابی در این دسته بندی یافت نشد.</h4>';
+                } else {
+                  if (mysqli_num_rows($get_books = mysqli_query($connection, "SELECT * FROM books")) != 0) {
+                    while ($book = mysqli_fetch_assoc($get_books)) {
+                        ?>
+                        <div class="col-md-3">
+                            <div class="card">
+                                <img src="<?php echo $book['iamge-link']; ?>" class="card-img-top">
+                                <div class="card-body text-center">
+                                <h6 class="card-title"><?php echo $book['book-name']; ?></h6>
+                                <br>
+                                <button class="btn btn-success">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    افزودن به سبد خرید
+                                </button>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                  } else echo '<h4>کتابی یافت نشد.</h4>';
+                }
             ?>
         </div>
       </div>
