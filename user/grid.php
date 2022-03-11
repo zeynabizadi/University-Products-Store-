@@ -45,7 +45,44 @@
     <?php include('../resources/widgets/sidebar.php'); ?>
     <div class="b-example-divider"></div>
     <div class="container" style="padding-top: 5%;">
-      <p>محصول</p>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="m-1">
+            <div class="card border">
+              <h4 class="text-primary card-header">اضافه کردن محصول جدید</h4>
+              <div class="card-body">
+                <form method="post">
+                  <label for="name" class="form-label text-dark">نام کتاب</label>
+                  <input class="form-control" id="name" name="name" placeholder="نام کتاب">
+                  <br>
+                  <label for="price" class="form-label text-dark">قیمت کتاب</label>
+                  <input class="form-control" id="price" name="price" placeholder="قیمت کتاب">
+                  <br>
+                  <label for="pic" class="form-label text-dark">عکس کتاب</label>
+                  <input type="file" class="form-control" id="pic" name="pic">
+                  <br>
+                  <label for="file" class="form-label text-dark">فایل کتاب</label>
+                  <input type="file" class="form-control" id="file" name="file">
+                  <br>
+                  <button name="newbook" type="submit" class="btn btn-primary w-100 btn">افزودن کتاب</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="m-1">
+            <h3 class="text-primary">راهنما افزودن محصول جدید</h3>
+            <br>
+            <p>
+              در اینجا کتاب مد نظر را همراه با عکس کاور کتاب آپلود میکنید.
+            </p>
+            <p>
+              اطلاعات مورد نیاز برنامه، نام کتاب، قیمت و فایل های عکس و خود کتاب میباشد.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 
