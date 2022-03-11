@@ -6,12 +6,10 @@ include('../config/config.php');
 
 $errors = array();
 
-function logout($path) {
+if (isset($_GET['logout'])) {
     session_destroy();
     header('location:', $path);
 }
-
-if (isset($_GET['logout'])) logout($path);
 
 if (isset($_POST['register'])) {
     $name = mysqli_real_escape_string($connection, $_POST['name']);
