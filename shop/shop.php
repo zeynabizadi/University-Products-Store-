@@ -74,8 +74,8 @@ $category = $_GET['category'];
                                 <h6 class="card-title"><?php echo $book['book-name']; ?></h6>
                                 <br>
                                 <button class="btn btn-success">
-                                    <i class="fa fa-shopping-cart"></i>
-                                    افزودن به سبد خرید
+                                  <i class="fa fa-shopping-cart"></i>
+                                  افزودن به سبد خرید
                                 </button>
                                 </div>
                             </div>
@@ -94,8 +94,8 @@ $category = $_GET['category'];
                                 <h6 class="card-title"><?php echo $book['book-name']; ?></h6>
                                 <br>
                                 <button class="btn btn-success">
-                                    <i class="fa fa-shopping-cart"></i>
-                                    افزودن به سبد خرید
+                                  <i class="fa fa-shopping-cart"></i>
+                                  افزودن به سبد خرید
                                 </button>
                                 </div>
                             </div>
