@@ -15,8 +15,8 @@ CREATE TABLE IF NOT EXISTS users
     PRIMARY KEY (`row`)
 );
 
-DROP TABLE IF EXISTS users;
-CREATE TABLE IF NOT EXISTS users
+DROP TABLE IF EXISTS books;
+CREATE TABLE IF NOT EXISTS books
 (
     `row`           INT(11) AUTO_INCREMENT,
     `book-id`            TEXT,
