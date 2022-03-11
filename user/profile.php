@@ -7,6 +7,10 @@
 
   if (empty($_SESSION['loggedin'])) header('location:' . $path . '/client');
 
+  $user_id = $_SESSION['id'];
+
+  $user = mysqli_fetch_assoc(mysqli_query($connection, "SELECT * FROM users WHERE `id` = '$user_id'"));
+
 ?>
 
 <!DOCTYPE html>
