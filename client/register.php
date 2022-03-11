@@ -24,7 +24,23 @@
   <main class="container" style="text-align: center; padding-top: 5%;">
     <h1>ثبت نام</h1>
     <br>
-    <form action="register.php">
+    <?php
+      if (count($errors) != 0) {
+        ?>
+        <ul>
+          <?php
+          foreach ($errors as $error) {
+            ?>
+            <li><?php echo $error; ?></li>
+            <?php
+          }
+          ?>
+        </ul>
+        <br>
+        <?php
+      }
+    ?>
+    <form action="register.php" method="post">
         <div class="mb-3 col-md-4">
             <label for="name" class="form-label">نام</label>
             <input type="name" name="name" class="form-control" id="name"required>
@@ -47,10 +63,10 @@
         </div>
         <br>
         <div class="mb-3 col-md-4">
-            <button type="submit" class="btn btn-dark w-100"required>ثبت نام در فروشگاه </button>
+            <button type="submit" name="register" class="btn btn-dark w-100">ثبت نام در فروشگاه </button>
         </div>
         <br>
-        <label class="form-check-label" for="Check1">قبلا ثبت نام کرده اید؟ <a style="color: #990033 ;text-decoration: none;" href="Register.html">وارد شوید</a></label>
+        <label class="form-check-label" for="Check1">قبلا ثبت نام کرده اید؟ <a style="color: #990033 ;text-decoration: none;" href="login.php">وارد شوید</a></label>
     </form>
     <br>
   </main>
