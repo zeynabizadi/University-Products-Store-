@@ -45,7 +45,70 @@
     <?php include('../resources/widgets/sidebar.php'); ?>
     <div class="b-example-divider"></div>
     <div class="container" style="padding-top: 5%;">
-      <p>پروفایل</p>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="m-1">
+            <div class="card border">
+              <h4 class="text-secondary card-header">اطلاعات پایه</h4>
+              <div class="card-body">
+                <span>
+                  <i class="fa fa-user text-secondary"></i>
+                  <?php echo $user['name'] . ' ' . $user['lastname']; ?>
+                  <br>
+                  <i class="fa fa-envelope text-secondary"></i>
+                  <?php echo $user['email']; ?>
+                  <br>
+                  <i class="fa fa-mobile text-secondary"></i>
+                  <?php echo $user['phone']; ?>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="m-1">
+            <h3 class="text-secondary">راهنما پروفایل</h3>
+            <br>
+            <p>
+              در این قسمت شما میتوانید اطلاعات ثبت شده خود را چک کنید و تغییر دهید.
+            </p>
+          </div>
+        </div>
+      </div>
+      <br><hr><br>
+      <div class="row">
+        <div class="col-md-6">
+            <div class="m-1">
+              <h3 class="text-danger">راهنما کد کاربر</h3>
+              <br>
+              <p>
+                کد کاربر قسمتی هست که کاربر به کد اختصاصی خود میتواند دسترسی داشته باشد.
+              </p>
+              <p>
+                در مواقعی نیاز به کد کاربر هست که به صورت پابلیک نمایش داده نمیشد.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="m-1">
+              <div class="card border">
+                <h4 class="text-danger card-header">اطلاعات کد کاربر</h4>
+                <div class="card-body">
+                  <p>
+                    برایی نمایش کلید،
+                    <b class="pointer" id="showkey">اینجا</b>
+                    کلیک کنید.
+                  </p>
+                  <span>
+                    <i class="fa fa-key text-danger"></i>
+                    <span id="key"><?php echo $user['id']; ?></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 
