@@ -5,7 +5,8 @@
         <i class="fa fa-user"></i>
         &nbsp;
         &nbsp;
-        <span class="fs-4">پنل کاربری</span>
+        <!-- <span class="fs-4">پنل کاربری</span> -->
+        <span class="fs-4"><?php echo $user['name'] . ' ' . $user['lastname']; ?></span>
     </a>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
