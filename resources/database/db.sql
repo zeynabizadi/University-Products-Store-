@@ -14,3 +14,16 @@ CREATE TABLE IF NOT EXISTS users
     `password` TEXT,
     PRIMARY KEY (`row`)
 );
+
+DROP TABLE IF EXISTS users;
+CREATE TABLE IF NOT EXISTS users
+(
+    `row`           INT(11) AUTO_INCREMENT,
+    `book-id`            TEXT,
+    `image-link`          TEXT,
+    `book-pwd` TEXT,
+    `book-name` TEXT,
+    `price` TEXT,
+    `category` TEXT,
+    PRIMARY KEY (`row`)
+);
