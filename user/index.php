@@ -45,7 +45,15 @@
     <?php include('../resources/widgets/sidebar.php'); ?>
     <div class="b-example-divider"></div>
     <div class="container" style="padding-top: 5%;">
-      <p>خانه</p>
+    <div class="text-success m-5">
+      <h1>
+        سلام
+        <?php echo $user['name']; ?>!
+      </h1>
+      <p>
+        خوش آمدید و لحظات خوبی را برای شما آرزو مندیم.
+      </p>
+    </div>
     </div>
   </main>
 
