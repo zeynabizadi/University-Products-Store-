@@ -52,8 +52,25 @@
               <h4 class="text-primary card-header">اضافه کردن محصول جدید</h4>
               <div class="card-body">
                 <form method="post">
-                  <label for="name" class="form-label text-dark">نام کتاب</label>
-                  <input class="form-control" id="name" name="name" placeholder="نام کتاب">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="m-1">
+                        <label for="name" class="form-label text-dark">نام کتاب</label>
+                        <input class="form-control" id="name" name="name" placeholder="نام کتاب">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="m-1">
+                        <label for="category" class="form-label text-dark">دسته بندی کتاب</label>
+                        <select class="form-select" id="category" name="category">
+                          <option value="null" default>انتخاب دسته بندی</option>
+                          <option value="nursing">پزشکی</option>
+                          <option value="engineering">فنی</option>
+                          <option value="art">هنر</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
                   <br>
                   <label for="price" class="form-label text-dark">قیمت کتاب</label>
                   <input class="form-control" id="price" name="price" placeholder="قیمت کتاب">
