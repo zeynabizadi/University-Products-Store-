@@ -3,13 +3,43 @@
   session_start();
 
   include('../resources/config/config.php');
-  include('../resources/routes/routes.php');
+  // include('../resources/routes/routes.php');
 
   if (empty($_SESSION['loggedin'])) header('location:' . $path . '/client');
 
   $user_id = $_SESSION['id'];
 
   $user = mysqli_fetch_assoc(mysqli_query($connection, "SELECT * FROM users WHERE `id` = '$user_id'"));
+
+  $errors = array();
+
+  if (isset($_POST['newbook']) && $_POST['newbook'] == 'upload') {
+    if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
+        // get details of the uploaded file
+        $fileTmpPath = $_FILES['file']['tmp_name'];
+        $fileName = $_FILES['file']['name'];
+        $fileSize = $_FILES['file']['size'];
+        $fileType = $_FILES['file']['type'];
+        $fileNameCmps = explode(".", $fileName);
+        $fileExtension = strtolower(end($fileNameCmps));
+
+        // sanitize file-name
+        $newFileName = md5(time() . $fileName) . '.' . $fileExtension;
+
+        // directory in which the uploaded file will be moved
+        $uploadFileDir = './uploads';
+        $dest_path = $uploadFileDir . $newFileName;
+
+        if(move_uploaded_file($fileTmpPath, $dest_path))  {
+            array_push($errors, $message ='File is successfully uploaded.');
+        } else {
+            array_push($errors, 'There was some error moving the file to upload directory. Please make sure the upload directory is writable by web server.');
+        }
+    } else {
+        array_push($errors, 'مشکلی در آپلود به موجود آمده است.');
+        array_push($errors, $_FILES['uploadedFile']['error']);
+    }
+}
 
 ?>
 
@@ -51,7 +81,7 @@
             <div class="card border">
               <h4 class="text-primary card-header">اضافه کردن محصول جدید</h4>
               <div class="card-body">
-                <form method="post" enctype="multipart/form-data">
+                <form method="post" enctype="multipart/form-data" action="grid.php">
                   <div class="row">
                     <div class="col-md-6">
                       <div class="m-1">
@@ -81,7 +111,7 @@
                   <label for="file" class="form-label text-dark">فایل کتاب</label>
                   <input type="file" class="form-control" id="file" name="file">
                   <br>
-                  <button name="newbook" type="submit" class="btn btn-primary w-100 btn">افزودن کتاب</button>
+                  <button name="newbook" value="upload" type="submit" class="btn btn-primary w-100 btn">افزودن کتاب</button>
                 </form>
               </div>
             </div>
@@ -98,21 +128,21 @@
               اطلاعات مورد نیاز برنامه، نام کتاب، قیمت و فایل های عکس و خود کتاب میباشد.
             </p>
             <?php
-      if (count($errors) != 0) {
-        ?>
-        <hr>
-        <ul>
-          <?php
-          foreach ($errors as $error) {
+              if (count($errors) != 0) {
+                ?>
+                <hr>
+                <ul>
+                  <?php
+                  foreach ($errors as $error) {
+                    ?>
+                    <li><?php echo $error; ?></li>
+                    <?php
+                  }
+                  ?>
+                </ul>
+                <?php
+              }
             ?>
-            <li><?php echo $error; ?></li>
-            <?php
-          }
-          ?>
-        </ul>
-        <?php
-      }
-    ?>
           </div>
         </div>
       </div>
