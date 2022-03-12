@@ -3,43 +3,13 @@
   session_start();
 
   include('../resources/config/config.php');
-  // include('../resources/routes/routes.php');
+  include('../resources/routes/routes.php');
 
   if (empty($_SESSION['loggedin'])) header('location:' . $path . '/client');
 
   $user_id = $_SESSION['id'];
 
   $user = mysqli_fetch_assoc(mysqli_query($connection, "SELECT * FROM users WHERE `id` = '$user_id'"));
-
-  $errors = array();
-
-  if (isset($_POST['newbook']) && $_POST['newbook'] == 'upload') {
-    if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
-        // get details of the uploaded file
-        $fileTmpPath = $_FILES['file']['tmp_name'];
-        $fileName = $_FILES['file']['name'];
-        $fileSize = $_FILES['file']['size'];
-        $fileType = $_FILES['file']['type'];
-        $fileNameCmps = explode(".", $fileName);
-        $fileExtension = strtolower(end($fileNameCmps));
-
-        // sanitize file-name
-        $newFileName = md5(time() . $fileName) . '.' . $fileExtension;
-
-        // directory in which the uploaded file will be moved
-        $uploadFileDir = './uploads';
-        $dest_path = $uploadFileDir . $newFileName;
-
-        if(move_uploaded_file($fileTmpPath, $dest_path))  {
-            array_push($errors, $message ='File is successfully uploaded.');
-        } else {
-            array_push($errors, 'There was some error moving the file to upload directory. Please make sure the upload directory is writable by web server.');
-        }
-    } else {
-        array_push($errors, 'مشکلی در آپلود به موجود آمده است.');
-        array_push($errors, $_FILES['uploadedFile']['error']);
-    }
-}
 
 ?>
 
