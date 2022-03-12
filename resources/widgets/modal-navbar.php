@@ -13,12 +13,8 @@
                       <a class="nav-link active" aria-current="page" href="<?php echo $path; ?>">خانه</a>
                     </li>
                     <li class="nav-item">
-<<<<<<< Updated upstream
+            
                       <a class="nav-link" href="<?php echo $path; ?>/shop/shop.php?category=engineering"  role="button"  aria-expanded="false">فنی مهندسی</a>
-=======
-                      <a class="nav-link" href="<?php echo $path; ?>/shop/shop.php?category=فنی"  role="button"  aria-expanded="false">
-                      فنی مهندسی</a>
->>>>>>> Stashed changes
                     </li>
                       <li class="nav-item">
                         <a class="nav-link " href="<?php echo $path; ?>/shop/shop.php?category=humanities"  role="button"  aria-expanded="false">
