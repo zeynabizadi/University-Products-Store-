@@ -66,10 +66,11 @@ $category = $_GET['category'];
                 if (isset($category)) {
                   if (mysqli_num_rows($get_books = mysqli_query($connection, "SELECT * FROM books WHERE category = '$category'")) != 0) {
                     while ($book = mysqli_fetch_assoc($get_books)) {
+                        $book_id = $book['book-id'];
                         ?>
                         <div class="col-md-3">
                             <div class="card">
-                                <img src="<?php echo $book['iamge-link']; ?>" class="card-img-top">
+                                <img src="../uploads/pics/<?php echo $book_id; ?>" class="card-img-top">
                                 <div class="card-body text-center">
                                 <h6 class="card-title"><?php echo $book['book-name']; ?></h6>
                                 <br>
@@ -86,10 +87,11 @@ $category = $_GET['category'];
                 } else {
                   if (mysqli_num_rows($get_books = mysqli_query($connection, "SELECT * FROM books")) != 0) {
                     while ($book = mysqli_fetch_assoc($get_books)) {
+                      $book_id = $book['book-id'];
                         ?>
                         <div class="col-md-3">
                             <div class="card">
-                                <img src="<?php echo $book['iamge-link']; ?>" class="card-img-top">
+                                <img src="../uploads/pics/<?php echo $book_id . '.png'; ?>" class="card-img-top">
                                 <div class="card-body text-center">
                                 <h6 class="card-title"><?php echo $book['book-name']; ?></h6>
                                 <br>
