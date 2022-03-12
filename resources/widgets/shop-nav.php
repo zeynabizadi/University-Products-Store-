@@ -2,18 +2,18 @@
 
 <ul class="nav menu" style="border-top-left-radius: 0; border-top-right-radius: 0;">
     <li class="nav-item">
-        <a class="nav-link" href="#anesthesia">علوم پایه</a>
+        <a class="nav-link" href="?category=science">علوم پایه</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#surgeryroom">علوم پزشکی</a>
+        <a class="nav-link" href="?category=medical">علوم پزشکی</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#medical">علوم انسانی</a>
+        <a class="nav-link" href="?category=humanities">علوم انسانی</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#nursing">فنی و مهندسی</a>
+        <a class="nav-link" href="?category=engineering">فنی و مهندسی</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#nursing">هنر</a>
+        <a class="nav-link" href="?category=art">هنر</a>
     </li>
 </ul>
