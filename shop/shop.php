@@ -3,6 +3,15 @@
 include('../resources/config/config.php');
 
 $category = $_GET['category'];
+$category_name = null;
+
+if (isset($category)) {
+  if ($category == "humanities") $category_name = "علوم انسانی";
+  if ($category == "science") $category_name = "علوم پایه";
+  if ($category == "medical") $category_name = "علوم پزشکی";
+  if ($category == "engineering") $category_name = "فنی و مهندسی";
+  if ($category == "art") $category_name = "هنر";
+}
 
 ?>
 
@@ -21,21 +30,8 @@ $category = $_GET['category'];
 <br class="clear both">
 <br>
   <main>
-    <ul class="nav menu">
-        <li class="nav-item">
-           <a class="nav-link" href="#anesthesia">هوشبری</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#surgeryroom">اتاق عمل</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="#medical">پزشکی</a>
-        </li>
-        <li class="nav-item">
-         <a class="nav-link" href="#nursing">پرستاری</a>
-        </li>
-      </ul>
-      <br>
+    <?php include('../resources/widgets/shop-nav.php'); ?>
+    <br>
     <div class="section container">
       <ul class="nav justify-content-end navsection container">
         <li class="nav-item">
@@ -54,28 +50,29 @@ $category = $_GET['category'];
           <a class="nav-link" href="#">جدید ترین </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" tabindex="-1" aria-disabled="true" href="#"> :مرتب سازی بر اساس</a>
+          <a class="nav-link disabled" tabindex="-1" aria-disabled="true" href="#">مرتب سازی بر اساس</a>
         </li>
       </ul>
       <br>
       <div class="container">
-        <h2 id="category"><?php echo $category; ?></h2>
+        <h2 id="category"><?php echo $category_name; ?></h2>
         <br>
         <div class="row">
             <?php
                 if (isset($category)) {
                   if (mysqli_num_rows($get_books = mysqli_query($connection, "SELECT * FROM books WHERE category = '$category'")) != 0) {
                     while ($book = mysqli_fetch_assoc($get_books)) {
+                        $book_id = $book['book-id'];
                         ?>
                         <div class="col-md-3">
                             <div class="card">
-                                <img src="<?php echo $book['iamge-link']; ?>" class="card-img-top">
+                                <img src="../uploads/pics/<?php echo $book_id; ?>" class="card-img-top">
                                 <div class="card-body text-center">
                                 <h6 class="card-title"><?php echo $book['book-name']; ?></h6>
                                 <br>
                                 <button class="btn btn-success">
-                                    <i class="fa fa-shopping-cart"></i>
-                                    افزودن به سبد خرید
+                                  <i class="fa fa-shopping-cart"></i>
+                                  افزودن به سبد خرید
                                 </button>
                                 </div>
                             </div>
@@ -86,16 +83,17 @@ $category = $_GET['category'];
                 } else {
                   if (mysqli_num_rows($get_books = mysqli_query($connection, "SELECT * FROM books")) != 0) {
                     while ($book = mysqli_fetch_assoc($get_books)) {
+                      $book_id = $book['book-id'];
                         ?>
                         <div class="col-md-3">
                             <div class="card">
-                                <img src="<?php echo $book['iamge-link']; ?>" class="card-img-top">
+                                <img src="../uploads/pics/<?php echo $book_id . '.png'; ?>" class="card-img-top">
                                 <div class="card-body text-center">
                                 <h6 class="card-title"><?php echo $book['book-name']; ?></h6>
                                 <br>
                                 <button class="btn btn-success">
-                                    <i class="fa fa-shopping-cart"></i>
-                                    افزودن به سبد خرید
+                                  <i class="fa fa-shopping-cart"></i>
+                                  افزودن به سبد خرید
                                 </button>
                                 </div>
                             </div>

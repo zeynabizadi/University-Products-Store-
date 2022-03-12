@@ -6,10 +6,14 @@
       new bootstrap.Tooltip(tooltipTriggerEl)
     })
   })()
- 
+
+$('#key').hide();
 
 $(document).ready(function () {
     $('#open-menu').click(function () {
     $('#nav-menu').modal('show');
+  });
+  $('#showkey').click(function () {
+    $('#key').fadeIn();
   });
 });

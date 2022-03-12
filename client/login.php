@@ -24,7 +24,23 @@
   <main class="container" style="text-align: center; padding-top: 5%;">
     <h1>ورود</h1>
     <br>
-    <form action="login.php">
+    <?php
+      if (count($errors) != 0) {
+        ?>
+        <ul>
+          <?php
+          foreach ($errors as $error) {
+            ?>
+            <li><?php echo $error; ?></li>
+            <?php
+          }
+          ?>
+        </ul>
+        <br>
+        <?php
+      }
+    ?>
+    <form action="login.php" method="post">
       <div class="mb-3 col-md-4">
         <label for="exampleInputEmail1" class="form-label">آدرس ایمیل (با حروف کوچک وارد کنید)</label>
         <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -38,7 +54,7 @@
         <button name="login" type="submit" class="btn btn-dark w-100">ورود به حساب کاربری خود </button>
       </div>
       <br>
-      <label class="form-check-label" for="Check1">کاربر جدید هستید؟ <a style="color: #990033; text-decoration: none;" href="register.html">ثبت نام کنید</a></label>
+      <label class="form-check-label" for="Check1">کاربر جدید هستید؟ <a style="color: #990033; text-decoration: none;" href="register.php">ثبت نام کنید</a></label>
     </form>
     <br>
   </main>

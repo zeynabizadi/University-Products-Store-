@@ -7,6 +7,10 @@
 
   if (empty($_SESSION['loggedin'])) header('location:' . $path . '/client');
 
+  $user_id = $_SESSION['id'];
+
+  $user = mysqli_fetch_assoc(mysqli_query($connection, "SELECT * FROM users WHERE `id` = '$user_id'"));
+
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +45,79 @@
     <?php include('../resources/widgets/sidebar.php'); ?>
     <div class="b-example-divider"></div>
     <div class="container" style="padding-top: 5%;">
-      <p>محصول</p>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="m-1">
+            <div class="card border">
+              <h4 class="text-primary card-header">اضافه کردن محصول جدید</h4>
+              <div class="card-body">
+                <form method="post" enctype="multipart/form-data" action="grid.php">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="m-1">
+                        <label for="name" class="form-label text-dark">نام کتاب</label>
+                        <input class="form-control" id="name" name="name" placeholder="نام کتاب">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="m-1">
+                        <label for="category" class="form-label text-dark">دسته بندی کتاب</label>
+                        <select class="form-select" id="category" name="category">
+                          <option value="null" default>انتخاب دسته بندی</option>
+                          <option value="humanities">علوم انسانی</option>
+                          <option value="medical">علوم پزشکی</option>
+                          <option value="science">علوم پایه</option>
+                          <option value="engineering">فنی و مهندسی</option>
+                          <option value="art">هنر</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <label for="price" class="form-label text-dark">قیمت کتاب</label>
+                  <input class="form-control" id="price" name="price" placeholder="قیمت کتاب">
+                  <br>
+                  <label for="pic" class="form-label text-dark">عکس کتاب</label>
+                  <input type="file" class="form-control" id="pic" name="pic">
+                  <br>
+                  <label for="file" class="form-label text-dark">فایل کتاب</label>
+                  <input type="file" class="form-control" id="file" name="file">
+                  <br>
+                  <button name="newbook" value="upload" type="submit" class="btn btn-primary w-100 btn">افزودن کتاب</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="m-1">
+            <h3 class="text-primary">راهنما افزودن محصول جدید</h3>
+            <br>
+            <p>
+              در اینجا کتاب مد نظر را همراه با عکس کاور کتاب آپلود میکنید.
+            </p>
+            <p>
+              اطلاعات مورد نیاز برنامه، نام کتاب، قیمت و فایل های عکس و خود کتاب میباشد.
+            </p>
+            <?php
+              if (count($errors) != 0) {
+                ?>
+                <hr>
+                <ul>
+                  <?php
+                  foreach ($errors as $error) {
+                    ?>
+                    <li><?php echo $error; ?></li>
+                    <?php
+                  }
+                  ?>
+                </ul>
+                <?php
+              }
+            ?>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 
