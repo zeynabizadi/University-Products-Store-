@@ -20,10 +20,9 @@ CREATE TABLE IF NOT EXISTS books
 (
     `row`           INT(11) AUTO_INCREMENT,
     `book-id`            TEXT,
-    `image-link`          TEXT,
-    `book-pwd` TEXT,
     `book-name` TEXT,
     `price` TEXT,
     `category` TEXT,
+    `owner` TEXT,
     PRIMARY KEY (`row`)
 );
