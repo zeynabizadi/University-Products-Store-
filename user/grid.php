@@ -64,8 +64,10 @@
                         <label for="category" class="form-label text-dark">دسته بندی کتاب</label>
                         <select class="form-select" id="category" name="category">
                           <option value="null" default>انتخاب دسته بندی</option>
-                          <option value="nursing">پزشکی</option>
-                          <option value="engineering">فنی</option>
+                          <option value="humanities">علوم انسانی</option>
+                          <option value="medical">علوم پزشکی</option>
+                          <option value="science">علوم پایه</option>
+                          <option value="engineering">فنی و مهندسی</option>
                           <option value="art">هنر</option>
                         </select>
                       </div>
