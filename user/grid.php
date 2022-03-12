@@ -51,7 +51,7 @@
             <div class="card border">
               <h4 class="text-primary card-header">اضافه کردن محصول جدید</h4>
               <div class="card-body">
-                <form method="post">
+                <form method="post" enctype="multipart/form-data">
                   <div class="row">
                     <div class="col-md-6">
                       <div class="m-1">
@@ -97,6 +97,22 @@
             <p>
               اطلاعات مورد نیاز برنامه، نام کتاب، قیمت و فایل های عکس و خود کتاب میباشد.
             </p>
+            <?php
+      if (count($errors) != 0) {
+        ?>
+        <hr>
+        <ul>
+          <?php
+          foreach ($errors as $error) {
+            ?>
+            <li><?php echo $error; ?></li>
+            <?php
+          }
+          ?>
+        </ul>
+        <?php
+      }
+    ?>
           </div>
         </div>
       </div>
