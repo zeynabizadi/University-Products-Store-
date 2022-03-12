@@ -4,6 +4,10 @@ session_start();
 
 include('../config/config.php');
 
+$uid = $_SESSION['id'];
+
+$_USER = mysqli_fetch_assoc(mysqli_query($connection, "SELECT * FROM users WHERE `id` = '$uid'"));
+
 $errors = array();
 
 if (isset($_GET['logout'])) {
@@ -52,8 +56,19 @@ if (isset($_POST['login'])) {
 }
 
 if (isset($_POST['newbook']) && $_POST['newbook'] == 'upload') {
+    $name = mysqli_real_escape_string($connection, $_POST['name']);
+    $category = mysqli_real_escape_string($connection, $_POST['category']);
+    $price = mysqli_real_escape_string($connection, $_POST['price']);
+
+    if (empty($name)) array_push($errors, "نام کتاب الزامیست");
+    if (empty($category)) array_push($errors, "دسته بنپدی کتاب الزامیست");
+    if (empty($price)) array_push($errors, "قیمت کتاب الزامیست");
+
+    // Creat ethe random ID
+    $book_id = rand(111111111, 999999999);
+
+    // Upload file
     if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
-        // get details of the uploaded file
         $fileTmpPath = $_FILES['file']['tmp_name'];
         $fileName = $_FILES['file']['name'];
         $fileSize = $_FILES['file']['size'];
@@ -61,20 +76,47 @@ if (isset($_POST['newbook']) && $_POST['newbook'] == 'upload') {
         $fileNameCmps = explode(".", $fileName);
         $fileExtension = strtolower(end($fileNameCmps));
 
-        // sanitize file-name
-        $newFileName = md5(time() . $fileName) . '.' . $fileExtension;
+        $uploadFileDir = '../uploads/books/';
 
-        // directory in which the uploaded file will be moved
-        $uploadFileDir = './uploads/books/';
+        $newFileName = $book_id . '.' . $fileExtension;
+
         $dest_path = $uploadFileDir . $newFileName;
 
         if(move_uploaded_file($fileTmpPath, $dest_path))  {
-            array_push($errors, $message ='File is successfully uploaded.');
+            array_push($errors, $message = 'کتاب با موفقیت آپلود شد');
         } else {
-            array_push($errors, 'There was some error moving the file to upload directory. Please make sure the upload directory is writable by web server.');
+            array_push($errors, 'فایل آپلود نشد. لطفا دسترسی های پوشه را چک کنید.');
         }
     } else {
-        array_push($errors, 'مشکلی در آپلود به موجود آمده است.');
-        array_push($errors, $_FILES['uploadedFile']['error']);
+        array_push($errors, 'مشکلی در آپلود فایل کتاب به موجود آمده است.');
+        array_push($errors, $_FILES['file']['error']);
     }
+
+    // Upload pic
+    if (isset($_FILES['pic']) && $_FILES['pic']['error'] === UPLOAD_ERR_OK) {
+        $fileTmpPath = $_FILES['pic']['tmp_name'];
+        $fileName = $_FILES['pic']['name'];
+        $fileSize = $_FILES['pic']['size'];
+        $fileType = $_FILES['pic']['type'];
+        $fileNameCmps = explode(".", $fileName);
+        $fileExtension = strtolower(end($fileNameCmps));
+
+        $uploadFileDir = '../uploads/pics/';
+
+        $newFileName = $book_id . '.' . $fileExtension;
+
+        $dest_path = $uploadFileDir . $newFileName;
+
+        if(move_uploaded_file($fileTmpPath, $dest_path))  {
+            array_push($errors, $message = 'کتاب با موفقیت آپلود شد');
+        } else {
+            array_push($errors, 'فایل آپلود نشد. لطفا دسترسی های پوشه را چک کنید.');
+        }
+    } else {
+        array_push($errors, 'مشکلی در آپلود فایل کتاب به موجود آمده است.');
+        array_push($errors, $_FILES['pic']['error']);
+    }
+
+    if (mysqli_query($connection, "INSERT INTO books (`book-id`, `book-name`, `price`, `category`, `owner`) VALUES ('$book_id', '$name', '$price', '$category', '$uid')")) header('location:' . $path . '/user/grid.php');
+    else array_push($errors, "مشکلی پیش آمده است.");
 }
