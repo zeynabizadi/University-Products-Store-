@@ -30,21 +30,8 @@ if (isset($category)) {
 <br class="clear both">
 <br>
   <main>
-    <ul class="nav menu">
-        <li class="nav-item">
-           <a class="nav-link" href="#anesthesia">هوشبری</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#surgeryroom">اتاق عمل</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="#medical">پزشکی</a>
-        </li>
-        <li class="nav-item">
-         <a class="nav-link" href="#nursing">پرستاری</a>
-        </li>
-      </ul>
-      <br>
+    <?php include('../resources/widgets/shop-nav.php'); ?>
+    <br>
     <div class="section container">
       <ul class="nav justify-content-end navsection container">
         <li class="nav-item">
@@ -63,12 +50,12 @@ if (isset($category)) {
           <a class="nav-link" href="#">جدید ترین </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" tabindex="-1" aria-disabled="true" href="#"> :مرتب سازی بر اساس</a>
+          <a class="nav-link disabled" tabindex="-1" aria-disabled="true" href="#">مرتب سازی بر اساس</a>
         </li>
       </ul>
       <br>
       <div class="container">
-        <h2 id="category"><?php echo $category; ?></h2>
+        <h2 id="category"><?php echo $category_name; ?></h2>
         <br>
         <div class="row">
             <?php
