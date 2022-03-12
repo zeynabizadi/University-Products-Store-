@@ -51,6 +51,30 @@ if (isset($_POST['login'])) {
     }
 }
 
-if (isset($_POST['newbook'])) {
-    // New book
+if (isset($_POST['newbook']) && $_POST['newbook'] == 'upload') {
+    if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
+        // get details of the uploaded file
+        $fileTmpPath = $_FILES['file']['tmp_name'];
+        $fileName = $_FILES['file']['name'];
+        $fileSize = $_FILES['file']['size'];
+        $fileType = $_FILES['file']['type'];
+        $fileNameCmps = explode(".", $fileName);
+        $fileExtension = strtolower(end($fileNameCmps));
+
+        // sanitize file-name
+        $newFileName = md5(time() . $fileName) . '.' . $fileExtension;
+
+        // directory in which the uploaded file will be moved
+        $uploadFileDir = './uploads/books/';
+        $dest_path = $uploadFileDir . $newFileName;
+
+        if(move_uploaded_file($fileTmpPath, $dest_path))  {
+            array_push($errors, $message ='File is successfully uploaded.');
+        } else {
+            array_push($errors, 'There was some error moving the file to upload directory. Please make sure the upload directory is writable by web server.');
+        }
+    } else {
+        array_push($errors, 'مشکلی در آپلود به موجود آمده است.');
+        array_push($errors, $_FILES['uploadedFile']['error']);
+    }
 }
