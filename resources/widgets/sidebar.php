@@ -37,12 +37,5 @@
         </li>
     </ul>
     <hr>
-    <div class="dropup">
-        <span id="dropdownMenuButton" class="pointer" data-mdb-toggle="dropdown" aria-expanded="false" >
-            بیشتر
-        </span>
-        <ul class="dropdown-menu border" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="?logout=true">خروج از حساب</a></li>
-        </ul>
-    </div>
+    <a class="text-reset" href="?logout=true">خروج از حساب</a>
 </div>
