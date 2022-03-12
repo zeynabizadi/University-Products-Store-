@@ -120,3 +120,10 @@ if (isset($_POST['newbook']) && $_POST['newbook'] == 'upload') {
     if (mysqli_query($connection, "INSERT INTO books (`book-id`, `book-name`, `price`, `category`, `owner`) VALUES ('$book_id', '$name', '$price', '$category', '$uid')")) header('location:' . $path . '/user/grid.php');
     else array_push($errors, "مشکلی پیش آمده است.");
 }
+
+if (isset($_GET['delete'])) {
+    $book_id = $_GET['delete'];
+    if (mysqli_query($connection, "DELETE FROM books WHERE `book-id` = '$book_id'")) {
+        header('location:' . $path . '/user/table.php');
+    }
+}
