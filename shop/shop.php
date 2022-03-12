@@ -3,6 +3,15 @@
 include('../resources/config/config.php');
 
 $category = $_GET['category'];
+$category_name = null;
+
+if (isset($category)) {
+  if ($category == "humanities") $category_name = "علوم انسانی";
+  if ($category == "science") $category_name = "علوم پایه";
+  if ($category == "medical") $category_name = "علوم پزشکی";
+  if ($category == "engineering") $category_name = "فنی و مهندسی";
+  if ($category == "art") $category_name = "هنر";
+}
 
 ?>
 
