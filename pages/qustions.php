@@ -12,7 +12,11 @@ include('../resources/config/config.php');
   <link href="../resources/css/mdb.min.css" rel="stylesheet" type="text/css" rel="stylesheet">
   <link rel="stylesheet" href="../resources/css/style.css">
   <script src="https://kit.fontawesome.com/4a679d8ec0.js" crossorigin="anonymous"></script>
-  <title>بازگشت کالا</title>
+<<<<<<< Updated upstream
+  <title>سوالات متداول</title>
+=======
+  <title>پرسش و پاسخ</title>
+>>>>>>> Stashed changes
 </head>
 <body>
   <?php include('../resources/widgets/navbar.php'); ?>
