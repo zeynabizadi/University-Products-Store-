@@ -53,6 +53,7 @@ if (isset($_POST['login'])) {
         } else if (mysqli_num_rows($user_query = mysqli_query($connection, "SELECT * FROM users WHERE `email` = '$email' AND `password` = '$password'")) == 1) {
             $user = mysqli_fetch_assoc($user_query);
             $_SESSION['loggedin'] = true;
+            $_SESSION['isuser'] = true;
             $_SESSION['id'] = $user['id'];
             header('location:' . $path . '/user');
         } else array_push($errors, 'اطلاعات وارد شده معتبر نمیباشد');
