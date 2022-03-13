@@ -127,3 +127,17 @@ if (isset($_GET['delete'])) {
         header('location:' . $path . '/user/table.php');
     }
 }
+
+if (isset($_POST['complaints'])) {
+    $who = mysqli_real_escape_string($connection, $_POST['who']);
+    $text = mysqli_real_escape_string($connection, $_POST['text']);
+
+    if (empty($who)) array_push($errors, "نام خود را وارد کنید.");
+    if (empty($text)) array_push($errors, "پیام خود را وارد کنید.");
+
+    if (count($errors) == 0) {
+        if (mysqli_query($connection, "INSERT INTO complaints (`who`, `text`) VALUES ('$who', '$text')")) {
+            header('location:' . $path . '/pages/protest.php');
+        }
+    }
+}
