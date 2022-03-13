@@ -5,7 +5,10 @@
   include('../resources/config/config.php');
   include('../resources/routes/routes.php');
 
-  if (isset($_SESSION['loggedin'])) header('location:' . $path . '/user');
+  if (isset($_SESSION['loggedin'])) {
+    if (isset($_SESSION['isuser'])) header('location:' . $path . '/user');
+    else if (isset($_SESSION['isadmin'])) header('location:' . $path . '/admin');
+  }
 
 ?>
 
