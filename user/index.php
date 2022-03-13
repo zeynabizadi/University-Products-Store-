@@ -5,8 +5,10 @@
   include('../resources/config/config.php');
   include('../resources/routes/routes.php');
 
-  if (empty($_SESSION['loggedin'])) header('location:' . $path . '/client');
-
+  if (isset($_SESSION['loggedin'])) {
+    if (isset($_SESSION['isadmin'])) header('location:' . $path . '/admin');
+  } else header('location:' . $path . '/client');
+  
   $user_id = $_SESSION['id'];
 
   $user = mysqli_fetch_assoc(mysqli_query($connection, "SELECT * FROM users WHERE `id` = '$user_id'"));
