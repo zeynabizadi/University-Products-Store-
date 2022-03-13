@@ -5,9 +5,9 @@
   include('../resources/config/config.php');
   include('../resources/routes/routes.php');
 
-  if (empty($_SESSION['loggedin'])) header('location:' . $path . '/client');
-
-  if (empty($_SESSION['isadmin'])) header('location:' . $path . '/client');
+  if (isset($_SESSION['loggedin'])) {
+    if (isset($_SESSION['isuser'])) header('location:' . $path . '/user');
+  } else header('location:' . $path . '/client');
 
 ?>
 
