@@ -26,3 +26,12 @@ CREATE TABLE IF NOT EXISTS books
     `owner` TEXT,
     PRIMARY KEY (`row`)
 );
+
+DROP TABLE IF EXISTS complaints;
+CREATE TABLE IF NOT EXISTS complaints
+(
+    `row`           INT(11) AUTO_INCREMENT,
+    `who`            TEXT,
+    `text` TEXT,
+    PRIMARY KEY (`row`)
+);

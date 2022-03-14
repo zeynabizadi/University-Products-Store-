@@ -46,9 +46,14 @@ if (isset($_POST['login'])) {
     if (empty($password)) array_push($errors, 'رمز الزامیست');
 
     if (count($errors) == 0) {
-        if (mysqli_num_rows($user_query = mysqli_query($connection, "SELECT * FROM users WHERE `email` = '$email' AND `password` = '$password'")) == 1) {
+        if ($email == 'admin@bookstore.com' && $password == 'Izadi') {
+            $_SESSION['loggedin'] = true;
+            $_SESSION['isadmin'] = true;
+            header('location:' . $path . '/admin');
+        } else if (mysqli_num_rows($user_query = mysqli_query($connection, "SELECT * FROM users WHERE `email` = '$email' AND `password` = '$password'")) == 1) {
             $user = mysqli_fetch_assoc($user_query);
             $_SESSION['loggedin'] = true;
+            $_SESSION['isuser'] = true;
             $_SESSION['id'] = $user['id'];
             header('location:' . $path . '/user');
         } else array_push($errors, 'اطلاعات وارد شده معتبر نمیباشد');
@@ -125,5 +130,19 @@ if (isset($_GET['delete'])) {
     $book_id = $_GET['delete'];
     if (mysqli_query($connection, "DELETE FROM books WHERE `book-id` = '$book_id'")) {
         header('location:' . $path . '/user/table.php');
+    }
+}
+
+if (isset($_POST['complaints'])) {
+    $who = mysqli_real_escape_string($connection, $_POST['who']);
+    $text = mysqli_real_escape_string($connection, $_POST['text']);
+
+    if (empty($who)) array_push($errors, "نام خود را وارد کنید.");
+    if (empty($text)) array_push($errors, "پیام خود را وارد کنید.");
+
+    if (count($errors) == 0) {
+        if (mysqli_query($connection, "INSERT INTO complaints (`who`, `text`) VALUES ('$who', '$text')")) {
+            header('location:' . $path . '/pages/protest.php');
+        }
     }
 }

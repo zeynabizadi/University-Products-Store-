@@ -1,6 +1,7 @@
 <?php
 
 include('../resources/config/config.php');
+include('../resources/routes/routes.php');
 
 ?>
 
@@ -30,17 +31,17 @@ include('../resources/config/config.php');
           <h2>ثبت شکایت</h2>
            <h4>.لطفا برای ثبت شکایت فرم زیر را پر کنید</h4>
            <br>
-           <form>
+           <form method="post" action="protest.php">
             <div class="mb-3 col-md-4">
               <label for="exampleInputEmail1" class="form-label"></label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="نام کاربری یا آدرس ایمیل خود را وارد کنید">
+              <input type="text" class="form-control" id="exampleInputEmail1" name="who" aria-describedby="emailHelp" placeholder="نام کاربری یا آدرس ایمیل خود را وارد کنید">
             </div>
             <div class="mb-3 col-md-4">
               <div class="form-floating">
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                <textarea class="form-control" rows="5" name="text" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
                 <label for="floatingTextarea">متن شکایت خود را در اینجا وارد کنید</label>
                 <br>
-                <button type="submit" class="btn btn-dark">ثبت  شکایت </button>
+                <button type="submit" class="btn btn-dark" name="complaints">ثبت  شکایت </button>
               </div>
             </div>
             <br>
