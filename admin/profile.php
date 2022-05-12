@@ -93,7 +93,7 @@
                 <h4 class="text-danger card-header">اطلاعات کد کاربر</h4>
                 <div class="card-body">
                   <p>
-                    برایی نمایش کلید،
+                    برای نمایش کلید،
                     <b class="pointer" id="showkey">اینجا</b>
                     کلیک کنید.
                   </p>
