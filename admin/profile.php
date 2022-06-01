@@ -120,5 +120,4 @@ if (isset($_SESSION['loggedin'])) {
   <script src="../resources/js/script.js"></script>
   <script src="../resources/js/mdb.min.js"></script>
 </body>
-
 </html>
