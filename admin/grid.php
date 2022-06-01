@@ -1,24 +1,25 @@
 <?php
 
-  session_start();
+session_start();
 
-  include('../resources/config/config.php');
-  include('../resources/routes/routes.php');
+include('../resources/config/config.php');
+include('../resources/routes/routes.php');
 
-  if (isset($_SESSION['loggedin'])) {
-    if (isset($_SESSION['isuser'])) header('location:' . $path . '/user');
-  } else header('location:' . $path . '/client');
+if (isset($_SESSION['loggedin'])) {
+  if (isset($_SESSION['isuser'])) header('location:' . $path . '/user');
+} else header('location:' . $path . '/client');
 
 ?>
 
 <!DOCTYPE html>
 <html lang="fa-IR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="../resources/css/mdb.min.css" rel="stylesheet" type="text/css" rel="stylesheet">
-  <link rel="stylesheet" href="../resources/css/style.css">
-  <link rel="stylesheet" href="../resources/css/styleuser.css">
+  <link href="https://blackiq.github.io/cdn-university-bookstore/css/mdb.min.css" rel="stylesheet" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="https://blackiq.github.io/cdn-university-bookstore/css/style.css">
+  <link rel="stylesheet" href="https://blackiq.github.io/cdn-university-bookstore/css/styleuser.css">
   <script src="https://kit.fontawesome.com/4a679d8ec0.js" crossorigin="anonymous"></script>
   <title>محصول</title>
   <style>
@@ -37,6 +38,7 @@
     }
   </style>
 </head>
+
 <body>
   <?php include('../resources/widgets/navbar.php'); ?>
   <main>
@@ -98,20 +100,20 @@
               اطلاعات مورد نیاز برنامه، نام کتاب، قیمت و فایل های عکس و خود کتاب میباشد.
             </p>
             <?php
-              if (count($errors) != 0) {
-                ?>
-                <hr>
-                <ul>
-                  <?php
-                  foreach ($errors as $error) {
-                    ?>
-                    <li><?php echo $error; ?></li>
-                    <?php
-                  }
-                  ?>
-                </ul>
+            if (count($errors) != 0) {
+            ?>
+              <hr>
+              <ul>
                 <?php
-              }
+                foreach ($errors as $error) {
+                ?>
+                  <li><?php echo $error; ?></li>
+                <?php
+                }
+                ?>
+              </ul>
+            <?php
+            }
             ?>
           </div>
         </div>
@@ -126,4 +128,5 @@
   <script src="../resources/js/script.js"></script>
   <script src="../resources/js/mdb.min.js"></script>
 </body>
-</html>   
+
+</html>

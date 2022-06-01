@@ -1,28 +1,29 @@
 <?php
 
-  session_start();
+session_start();
 
-  include('../resources/config/config.php');
-  include('../resources/routes/routes.php');
+include('../resources/config/config.php');
+include('../resources/routes/routes.php');
 
-  if (isset($_SESSION['loggedin'])) {
-    if (isset($_SESSION['isadmin'])) header('location:' . $path . '/admin');
-  } else header('location:' . $path . '/client');
+if (isset($_SESSION['loggedin'])) {
+  if (isset($_SESSION['isadmin'])) header('location:' . $path . '/admin');
+} else header('location:' . $path . '/client');
 
-  $user_id = $_SESSION['id'];
+$user_id = $_SESSION['id'];
 
-  $user = mysqli_fetch_assoc(mysqli_query($connection, "SELECT * FROM users WHERE `id` = '$user_id'"));
+$user = mysqli_fetch_assoc(mysqli_query($connection, "SELECT * FROM users WHERE `id` = '$user_id'"));
 
 ?>
 
 <!DOCTYPE html>
 <html lang="fa-IR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="../resources/css/mdb.min.css" rel="stylesheet" type="text/css" rel="stylesheet">
-  <link rel="stylesheet" href="../resources/css/style.css">
-  <link rel="stylesheet" href="../resources/css/styleuser.css">
+  <link href="https://blackiq.github.io/cdn-university-bookstore/css/mdb.min.css" rel="stylesheet" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="https://blackiq.github.io/cdn-university-bookstore/css/style.css">
+  <link rel="stylesheet" href="https://blackiq.github.io/cdn-university-bookstore/css/styleuser.css">
   <script src="https://kit.fontawesome.com/4a679d8ec0.js" crossorigin="anonymous"></script>
   <title>مالی و فروش</title>
   <style>
@@ -41,6 +42,7 @@
     }
   </style>
 </head>
+
 <body>
   <?php include('../resources/widgets/navbar.php'); ?>
   <main>
@@ -50,22 +52,22 @@
       <div class="row">
         <div class="col-md-6">
           <div class="m-1">
-          <div class="card border">
+            <div class="card border">
               <h4 class="text-success card-header">کتاب های شما</h4>
               <div class="card-body">
                 <?php
-                  if (mysqli_num_rows($get_books = mysqli_query($connection, "SELECT * FROM books WHERE owner = '$user_id'")) != 0) {
-                    while ($book = mysqli_fetch_assoc($get_books)) {
-                      $book_id = $book['book-id'];
-                        ?>
-                        <span>
-                          <?php echo $book['book-name']; ?>
-                          <a href="?delete=<?php echo $book_id; ?>"><i class="fa fa-trash text-danger float-start"></i></a>
-                        </span>
-                        <hr>
-                        <?php
-                    }
-                  } else echo '<span>کتابی آپلود نکرده اید.</span>';
+                if (mysqli_num_rows($get_books = mysqli_query($connection, "SELECT * FROM books WHERE owner = '$user_id'")) != 0) {
+                  while ($book = mysqli_fetch_assoc($get_books)) {
+                    $book_id = $book['book-id'];
+                ?>
+                    <span>
+                      <?php echo $book['book-name']; ?>
+                      <a href="?delete=<?php echo $book_id; ?>"><i class="fa fa-trash text-danger float-start"></i></a>
+                    </span>
+                    <hr>
+                <?php
+                  }
+                } else echo '<span>کتابی آپلود نکرده اید.</span>';
                 ?>
               </div>
             </div>
@@ -91,4 +93,5 @@
   <script src="../resources/js/script.js"></script>
   <script src="../resources/js/mdb.min.js"></script>
 </body>
-</html>   
+
+</html>
