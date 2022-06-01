@@ -1,24 +1,25 @@
 <?php
 
-  session_start();
+session_start();
 
-  include('../resources/config/config.php');
-  include('../resources/routes/routes.php');
+include('../resources/config/config.php');
+include('../resources/routes/routes.php');
 
-  if (isset($_SESSION['loggedin'])) {
-    if (isset($_SESSION['isuser'])) header('location:' . $path . '/user');
-  } else header('location:' . $path . '/client');
+if (isset($_SESSION['loggedin'])) {
+  if (isset($_SESSION['isuser'])) header('location:' . $path . '/user');
+} else header('location:' . $path . '/client');
 
 ?>
 
 <!DOCTYPE html>
 <html lang="fa-IR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="../resources/css/mdb.min.css" rel="stylesheet" type="text/css" rel="stylesheet">
-  <link rel="stylesheet" href="../resources/css/style.css">
-  <link rel="stylesheet" href="../resources/css/styleuser.css">
+  <link href="https://blackiq.github.io/cdn-university-bookstore/css/mdb.min.css" rel="stylesheet" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="https://blackiq.github.io/cdn-university-bookstore/css/style.css">
+  <link rel="stylesheet" href="https://blackiq.github.io/cdn-university-bookstore/css/styleuser.css">
   <script src="https://kit.fontawesome.com/4a679d8ec0.js" crossorigin="anonymous"></script>
   <title>خانه</title>
   <style>
@@ -37,21 +38,22 @@
     }
   </style>
 </head>
+
 <body>
   <?php include('../resources/widgets/navbar.php'); ?>
   <main>
     <?php include('../resources/widgets/admin-sidebar.php'); ?>
     <div class="b-example-divider"></div>
     <div class="container" style="padding-top: 5%;">
-    <div class="text-success m-5">
-      <h1>
-        سلام
-        <?php echo $user['name']; ?>!
-      </h1>
-      <p>
-        خوش آمدید و لحظات خوبی را برای شما آرزو مندیم.
-      </p>
-    </div>
+      <div class="text-success m-5">
+        <h1>
+          سلام
+          <?php echo $user['name']; ?>!
+        </h1>
+        <p>
+          خوش آمدید و لحظات خوبی را برای شما آرزو مندیم.
+        </p>
+      </div>
     </div>
   </main>
 
@@ -62,4 +64,5 @@
   <script src="../resources/js/script.js"></script>
   <script src="../resources/js/mdb.min.js"></script>
 </body>
-</html>   
+
+</html>
